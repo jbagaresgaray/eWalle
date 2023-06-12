@@ -6,8 +6,10 @@ import Animated, {
 } from "react-native-reanimated";
 import { theme } from "../constants/theme";
 import { useDrawerProgress } from "@react-navigation/drawer";
+import useStatusBarHeight from "../hooks/useStatusBarHeight";
 
 const DrawerView = ({ children, style }) => {
+  const top = useStatusBarHeight();
   const progress = useDrawerProgress();
   const viewStyles = useAnimatedStyle(() => {
     const scale = interpolate(progress.value, [0, 1], [1, 0.8]);
@@ -15,13 +17,19 @@ const DrawerView = ({ children, style }) => {
     const rotateX = interpolate(progress.value, [0, 1], [0, -15]);
     return {
       //   transform: [{ scale, rotate: `${rotateX}deg` }],
-      transform: [{ scale }],
       borderRadius,
+      transform: [{ scale }],
     };
   });
 
   return (
-    <Animated.View style={[styles.stack, style, viewStyles]}>
+    <Animated.View
+      style={[
+        styles.stack,
+        style,
+        viewStyles,
+      ]}
+    >
       {children}
     </Animated.View>
   );
@@ -32,13 +40,6 @@ export default DrawerView;
 const styles = StyleSheet.create({
   stack: {
     flex: 1,
-    shadowColor: theme.Colors.white,
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.44,
-    shadowRadius: 10.32,
-    elevation: 5,
+    overflow: "hidden",
   },
 });

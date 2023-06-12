@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.Colors.background,
     padding: 0,
     margin: 0,
+    // width: 210,
   },
   drawerItemStyle: {
     borderLeftWidth: 6,

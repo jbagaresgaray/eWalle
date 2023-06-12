@@ -11,15 +11,6 @@ const Stack = createNativeStackNavigator();
 
 const navigationOptions = {
   gestureEnabled: false,
-  headerStyle: {
-    backgroundColor: theme.Colors.white,
-    shadowColor: "transparent",
-    shadowRadius: 0,
-    shadowOffset: {
-      height: 0,
-    },
-    elevation: 0,
-  },
   headerShadowVisible: false,
   headerBackTitleVisible: false,
   headerLeft: () => <DrawerTitleBar />,
