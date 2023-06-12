@@ -12,6 +12,7 @@ import {
 } from "@expo-google-fonts/ubuntu";
 
 import MainNavigations from "./navigator";
+import { theme } from "./constants/theme";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,16 +26,13 @@ export default function App() {
   });
 
   Colors.loadColors({
-    primary: "#3A4276",
-    warning: "#FFAC30",
-    dark: "#1B1D28",
-    medium: "#7B7F9E",
-    background: "#F1F3F6",
-    white: "#ffffff",
+    ...theme.Colors,
   });
 
-  Assets.loadAssetsGroup("icons", {
-    arrowRight: require("./assets/svg/arrow-right.svg"),
+  Assets.loadAssetsGroup("users", {
+    mike: require("./assets/users/mike.png"),
+    josh: require("./assets/users/josh.png"),
+    ash: require("./assets/users/ash.png"),
   });
 
   Typography.loadTypographies({
@@ -49,6 +47,12 @@ export default function App() {
       lineHeight: 37,
       fontFamily: "AvenirNext-Regular",
     },
+    h2B: {
+      fontSize: 24,
+      lineHeight: 37,
+      fontWeight: "600",
+      fontFamily: "AvenirNext-Bold",
+    },
     text70: {
       fontSize: 16,
       lineHeight: 24,
@@ -58,6 +62,11 @@ export default function App() {
       fontSize: 14,
       lineHeight: 20,
       fontFamily: "AvenirNext-Regular",
+    },
+    text80B: {
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: "AvenirNext-Bold",
     },
     text90: {
       fontSize: 12,

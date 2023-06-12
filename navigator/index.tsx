@@ -7,14 +7,13 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigations = () => {
   return (
-    <Stack.Navigator initialRouteName="Onboarding">
-      <Stack.Screen
-        name="Onboarding"
-        component={OnboardingScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
+    <Stack.Navigator
+      initialRouteName="Onboarding"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
     </Stack.Navigator>
   );

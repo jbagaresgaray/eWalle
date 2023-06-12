@@ -7,9 +7,12 @@ import LogoSVG from "../assets/svg/logo.svg";
 import { Button, Colors, Text, Typography } from "react-native-ui-lib";
 import DateTimeTemperature from "../components/DateTimeTemperature";
 import useStatusBarHeight from "../hooks/useStatusBarHeight";
+import { useNavigation } from "@react-navigation/native";
 
 const OnboardingScreen = () => {
   const top = useStatusBarHeight();
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.BannerContainer}>
@@ -54,6 +57,7 @@ const OnboardingScreen = () => {
               marginRight: 8,
             }}
             iconOnRight
+            onPress={() => navigation.navigate("Drawer")}
           />
           <TouchableOpacity activeOpacity={0.8}>
             <Text text70 dark center marginT-30>
