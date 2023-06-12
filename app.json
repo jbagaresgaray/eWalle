@@ -5,6 +5,13 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "com.ewalle"
+    },
+    "ios": {
+      "bundleIdentifier": "com.ewalle"
+    }
   }
 }
