@@ -24,7 +24,7 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
       initialRouteName="Home"
       screenOptions={{
-        drawerType: "slide",
+        // drawerType: "slide",
         overlayColor: "transparent",
         headerShadowVisible: false,
         drawerStyle: styles.drawerStyles,
@@ -35,6 +35,7 @@ const DrawerNavigator = () => {
         drawerActiveBackgroundColor: "transparent",
         headerTitle: "",
         headerShown: false,
+        drawerHideStatusBarOnOpen: true,
       }}
       drawerContent={(props: any) => {
         return <CustomDrawerContent {...props} />;
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.Colors.background,
     padding: 0,
     margin: 0,
+    width: "60%",
     // width: 210,
   },
   drawerItemStyle: {

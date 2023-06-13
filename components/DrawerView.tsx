@@ -12,24 +12,25 @@ const DrawerView = ({ children, style }) => {
   const top = useStatusBarHeight();
   const progress = useDrawerProgress();
   const viewStyles = useAnimatedStyle(() => {
-    const scale = interpolate(progress.value, [0, 1], [1, 0.8]);
+    const scale = interpolate(progress.value, [0, 1], [1, 0.7]);
     const borderRadius = interpolate(progress.value, [0, 1], [0, 30]);
-    const rotateX = interpolate(progress.value, [0, 1], [0, -15]);
+    const rotateX = interpolate(progress.value, [0, 1], [0, -10], "clamp");
+
     return {
-      //   transform: [{ scale, rotate: `${rotateX}deg` }],
       borderRadius,
-      transform: [{ scale }],
+      transform: [
+        {
+          scale,
+        },
+        {
+          rotate: `${rotateX}deg`,
+        },
+      ],
     };
   });
 
   return (
-    <Animated.View
-      style={[
-        styles.stack,
-        style,
-        viewStyles,
-      ]}
-    >
+    <Animated.View style={[styles.stack, style, viewStyles]}>
       {children}
     </Animated.View>
   );
