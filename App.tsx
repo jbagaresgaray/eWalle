@@ -33,6 +33,7 @@ export default function App() {
     mike: require("./assets/users/mike.png"),
     josh: require("./assets/users/josh.png"),
     ash: require("./assets/users/ash.png"),
+    user: require("./assets/users/user.png"),
   });
 
   Typography.loadTypographies({

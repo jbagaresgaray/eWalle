@@ -4,6 +4,8 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
+import UserDrawer from "./UserDrawer";
+import DrawerListItem from "./DrawerListItem";
 
 const CustomDrawerContent = (props) => {
   return (
@@ -12,7 +14,12 @@ const CustomDrawerContent = (props) => {
       scrollEnabled={false}
       contentContainerStyle={styles.drawerContentContainerStyle}
     >
+      <UserDrawer />
       <DrawerItemList {...props} />
+      <DrawerListItem
+        label={"Logouts"}
+        onPress={() => props.navigation.navigate("Onboarding")}
+      />
     </DrawerContentScrollView>
   );
 };

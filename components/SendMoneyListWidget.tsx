@@ -2,7 +2,7 @@ import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SEND_MONEY } from "../constants";
 import CircleFABButton from "./CircleFABButton";
-import { Colors, Image, Text } from "react-native-ui-lib";
+import { Image, Text } from "react-native-ui-lib";
 import { theme } from "../constants/theme";
 
 const SendMoneyListWidget = () => {
